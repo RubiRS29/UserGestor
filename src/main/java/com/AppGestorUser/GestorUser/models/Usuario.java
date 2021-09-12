@@ -1,13 +1,40 @@
 package com.AppGestorUser.GestorUser.models;
 
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "users")
 public class Usuario {
 
+    @Id
+    @Column(name = "id_user")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
     private String name;
-    private String last_name;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "email")
     private String email;
-    private String telephone_number;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "password")
     private String password;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -16,12 +43,12 @@ public class Usuario {
         this.name = name;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -32,12 +59,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getTelephone_number() {
-        return telephone_number;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephone_number(String telephone_number) {
-        this.telephone_number = telephone_number;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getPassword() {
@@ -47,4 +74,5 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
